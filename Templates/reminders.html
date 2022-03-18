@@ -1,0 +1,24 @@
+
+<div class="container" >
+    <div class="row" >
+        <div class="col-md-6" ng-repeat="reminder in reminders">
+            <div class="card" style="width: 25rem;">
+                <div class="card-body">
+                  <h5 class="card-title">{{reminder.reminder}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{reminder.timeForReminder}}</h6>
+                  <p class="card-text">{{reminder.dateForReminder}}</p>
+                  <button type="button" class="btn btn-success">Edit</button>
+                  <button type="button" class="btn btn-danger">Delete</button>
+                  <button type="button" class="btn btn-info">More details</button>
+                </div>
+              </div>
+        </div>
+        
+    </div>
+    <br>
+</div>
+
+
+
+
+
