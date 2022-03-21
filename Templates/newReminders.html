@@ -1,0 +1,26 @@
+<div class="container">
+    <p class="lead" style="text-align: center; padding: 25px; ">
+        Insert new reminder
+    </p>
+    <div class="row">
+        <div class="col-md-12">
+            <form>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Reminder title</label>
+                    <input type="text" class="form-control" ng-model="empTitle">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">More about the reminder</label>
+                    <textarea class="form-control" rows="3" ng-model="empDetalis"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="control-label" for="date">Insert date</label>
+                    <input class="form-control" placeholder="MM/DD/YYY" type="datetime-local"  ng-model="empDate" />
+                </div>
+                
+                <button type="submit" ng-click="addEmp(empTitle,empDetalis,empDate,empTime)" class="btn btn-primary">Enter</button>
+            </form>
+        </div>
+    </div>
+    <br>
+</div>

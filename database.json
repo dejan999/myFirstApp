@@ -1,34 +1,22 @@
 {
-    "reminders": [
-        {
-            "id":1,
-            "name": "Marko",
-            "dateOfBorn": "January 1, 1996",
-            "JMBG": 26089996589,
-            "gender": "male",
-            "reminder": "Polaganje ispita iz OOP-a",
-            "dateForReminder": "January 19, 2022",
-            "timeForReminder": "10:00:00"
-        },
-        {
-            "id":2,
-            "name": "Ana",
-            "dateOfBorn": "Avgust 29, 1999",
-            "JMBG": 11069999589,
-            "gender": "female",
-            "reminder": "Uplacivanje troskova skolarine",
-            "dateForReminder": "January 31, 2022",
-            "timeForReminder": "08:30:00"
-        },
-        {
-            "id":3,
-            "name": "Jovana",
-            "dateOfBorn": "December 11, 1978",
-            "JMBG": 11063769589,
-            "gender": "female",
-            "reminder": "Odrzati prezentaciju o upisu na FTN",
-            "dateForReminder": "May 5, 2022",
-            "timeForReminder": "13:30:00"
-        }
-    ]
+  "reminders": [
+    {
+      "id": 1,
+      "reminder": "Ispt",
+      "reminderDetalis": "Polaganje ispita iz web-a\nIspit se polaze u velikom amfiteatru\nRade se zadaci iz JS-a\nProfesor Petar Petrovic",
+      "dateForReminder": "2022-03-24T13:15:00.000Z"
+    },
+    {
+      "id": 2,
+      "reminder": "Polaganje voznje",
+      "reminderDetalis": "Poneti licnu kartu\nPoneti lekarsko uverenje\nI uplatnice o placenoj taksi polaganja",
+      "dateForReminder": "2022-04-11T19:30:00.000Z"
+    },
+    {
+      "id": 3,
+      "reminder": "Tehnicki pregled",
+      "reminderDetalis": "Poneti polisu osiguranuja",
+      "dateForReminder": "2022-03-18T16:00:00.000Z"
+    }
+  ]
 }
