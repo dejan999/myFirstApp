@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card" style="margin-top: 65px;">
+        <h6 class="card-header">{{reminders[0].reminder}}</h6>
+        <div class="card-body">
+          <h5 class="card-title">{{reminders[0].reminderDetalis}}</h5>
+          <p class="card-text"><i class="bi bi-watch"></i> {{reminders[0].dateForReminder.substr(11,5)}}</p>
+          <p class="card-text"><i class="bi bi-calendar-event"></i> {{reminders[0].dateForReminder.substr(0,10)}}</p>
+          <a ui-sref="reminders" class="btn btn-primary">Back</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

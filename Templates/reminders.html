@@ -1,5 +1,5 @@
-<div class="container">
-  <p class="lead" style="text-align: center; padding: 25px; " >
+<div class="container" style="margin-top: 70px;">
+  <p class="lead">
     Lists of reminders
   </p>
   <div class="row">
@@ -11,14 +11,27 @@
           <h6 class="card-subtitle mb-2 text-muted"><i class="bi bi-watch"></i> {{reminder.dateForReminder.substr(11,5)}}</h6>
          
           <p class="card-text"><i class="bi bi-calendar-event"></i> {{reminder.dateForReminder.substr(0,10)}}</p>
-          <button type="button" class="btn btn-success">Edit</button>
-          <button type="button" class="btn btn-danger">Delete</button>
-          <button type="button" class="btn btn-info" >More details</button>
+          <button type="button" class="btn btn-success" ng-click="update(reminder)">Edit</button>
+          <button type="button" class="btn btn-danger" ng-click="delete(reminder.id)">Delete</button>
+          <button type="button" class="btn btn-info" ng-click="openMore(reminder)">More details</button>
         </div>
       </div>
       <br><br>
     </div>
-
+    <div class="col-md-6">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="#" ng-click="previous()">Previous</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-md-6">
+      <nav aria-label="Page navigation example" >
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="#" ng-click="next()">Next</a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
   <br>
 </div>

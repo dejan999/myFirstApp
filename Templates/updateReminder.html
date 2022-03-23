@@ -1,26 +1,26 @@
 <div class="container">
     <p class="lead" style="text-align: center; padding: 25px; ">
-        Insert new reminder
+        Update reminder
     </p>
     <div class="row">
         <div class="col-md-12">
-            <form >
+            <form>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Reminder title</label>
-                    <input type="text" class="form-control" name="empTitle" ng-model="empTitle" required>
+                    <input type="text" class="form-control" name="empTitle" ng-model="reminders[0].reminder" required>
                     
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">More about the reminder</label>
-                    <textarea class="form-control" rows="3" ng-model="empDetalis" required></textarea>
+                    <textarea class="form-control" rows="3" ng-model="reminders[0].reminderDetalis"  required></textarea>
                 </div>
                 <div class="mb-3">
                     <label class="control-label" for="date">Insert date</label>
-                    <input class="form-control" placeholder="MM/DD/YYY" type="datetime-local" ng-model="empDate" required />
+                    <input class="form-control" placeholder="MM/DD/YYY" type="datetime-local" ng-model="reminders[0].dateForReminder"  required />
                 </div>
 
-                <button type="submit" ng-click="addEmp(empTitle,empDetalis,empDate,empTime)"
-                    class="btn btn-primary" >Enter</button>
+                <button type="submit" ng-click="newUpdate()"
+                    class="btn btn-primary" >Update</button>
             </form>
         </div>
     </div>

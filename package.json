@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "angular-ui-bootstrap": "^2.5.6",
     "express": "^4.17.3",
     "json-server": "^0.17.0"
   }
