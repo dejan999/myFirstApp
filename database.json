@@ -43,34 +43,10 @@
       "id": 7
     },
     {
-      "reminder": "iyiuiyiyuiyiiu",
-      "reminderDetalis": "yuiyuiyuiy",
-      "dateForReminder": "2022-03-03T14:20:00.000Z",
+      "reminder": "Otvaranje racuna",
+      "reminderDetalis": "Otvoriti racun u Postanskoj stedionici\nPoneti kopiju licne karte i uplatinicu o uplati troskova otvaranja novog racuna",
+      "dateForReminder": "2022-03-31T19:45:00.000Z",
       "id": 8
-    },
-    {
-      "reminder": "yuiyuiyu",
-      "reminderDetalis": "iyiyiyuiyiyiu",
-      "dateForReminder": "2022-03-10T14:20:00.000Z",
-      "id": 9
-    },
-    {
-      "reminder": "yiyuiyuiyiyui",
-      "reminderDetalis": "yuiyuiyuiyuiyuiyuiuyiyuiuy",
-      "dateForReminder": "2022-03-26T14:20:00.000Z",
-      "id": 10
-    },
-    {
-      "reminder": "iyuiuyiuyiyui",
-      "reminderDetalis": "iyiuiyiyuiuyiyi",
-      "dateForReminder": "2022-03-08T14:20:00.000Z",
-      "id": 11
-    },
-    {
-      "reminder": "iyuiyuiyu",
-      "reminderDetalis": "iuyiyuiyuiyuiyuiyuiiyi\nyiyu\niyu\niyu",
-      "dateForReminder": "2022-04-02T13:20:00.000Z",
-      "id": 12
     }
   ]
 }

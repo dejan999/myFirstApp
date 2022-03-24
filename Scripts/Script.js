@@ -5,7 +5,7 @@ var app = angular.module("Demo", ['ui.router'])
 
         $stateProvider
             .state("reminders", {
-                url: "/reminders",
+                url: "",
                 templateUrl: "Templates/reminders.html",
                 controller: "remindersController",
                 controllerAS: "remindersCtrl"
@@ -31,20 +31,52 @@ var app = angular.module("Demo", ['ui.router'])
 
     })
 
-    .controller("remindersController", function ($scope, $state, $http, $log, $stateParams) {
+    .controller("remindersController", function ($scope, $state, $http, $log, httpService) {
         var vm = this;
 
+        var pageNext = 1;
+        var maxLimit;
+        var newLimit;
 
 
-        $http({
-            method: 'GET',
-            url: 'http://localhost:3000/reminders',
-
-        })
+        function newApi() {
+            httpService.view(pageNext)
             .then(function (response) {
                 $scope.reminders = response.data;
-                $log.info(response);
-            })
+
+                maxLimit = response.headers('X-Total-Count');
+                newLimit = Math.ceil(maxLimit / 4);
+                console.log(newLimit);
+
+            }
+
+            )
+        }
+        newApi()
+
+
+
+
+        $scope.next = function () {
+            if (pageNext < newLimit) {
+                pageNext++;
+            }
+           newApi()
+
+        }
+        $scope.previous = function () {
+            if (pageNext > 1) {
+                pageNext--;
+            }
+
+            newApi()
+
+        }
+
+
+
+
+
 
         $scope.openMore = function (reminder) {
             $state.go("moreDetalis", { id: reminder.id })
@@ -65,15 +97,7 @@ var app = angular.module("Demo", ['ui.router'])
 
                     if (response.data)
 
-                        $http({
-                            method: 'GET',
-                            url: 'http://localhost:3000/reminders',
-
-                        })
-                            .then(function (response) {
-                                $scope.reminders = response.data;
-                                $log.info(response);
-                            })
+                        newApi()
 
                     $scope.msg = "Reminder is deleted!";
                     alert($scope.msg);
@@ -113,7 +137,7 @@ var app = angular.module("Demo", ['ui.router'])
             })
     })
 
-    .controller("updateReminderController", function ($scope, $state,$stateParams, $http) {
+    .controller("updateReminderController", function ($scope, $state, $stateParams, $http) {
 
         var data;
 
@@ -131,41 +155,41 @@ var app = angular.module("Demo", ['ui.router'])
 
         $scope.newUpdate = function () {
 
-            
-            
-                $http.put('http://localhost:3000/reminders/' + $scope.reminders[0].id , JSON.stringify($scope.reminders[0])).then(function (response) {
 
-                    if (response.data)
 
-                        $http({
-                            method: 'GET',
-                            url: 'http://localhost:3000/reminders',
+            $http.put('http://localhost:3000/reminders/' + $scope.reminders[0].id, JSON.stringify($scope.reminders[0])).then(function (response) {
+
+                if (response.data)
+
+                    $http({
+                        method: 'GET',
+                        url: 'http://localhost:3000/reminders',
+
+                    })
+                        .then(function (response) {
+                            response.data[0].dateForReminder = new Date(response.data[0].dateForReminder);
+                            $scope.reminders = response.data;
 
                         })
-                            .then(function (response) {
-                                response.data[0].dateForReminder = new Date(response.data[0].dateForReminder);
-                                $scope.reminders = response.data;
-                                
-                            })
 
-                    $scope.msg = "Reminder is updated!";
-                    alert($scope.msg);
-                    $state.go("reminders")
+                $scope.msg = "Reminder is updated!";
+                alert($scope.msg);
+                $state.go("reminders")
 
-                    
-                }, function (response) {
 
-                    $scope.msg = "Something is wrong";
-                    alert($scope.msg);
-                    $scope.statusval = response.status;
+            }, function (response) {
 
-                    $scope.statustext = response.statusText;
+                $scope.msg = "Something is wrong";
+                alert($scope.msg);
+                $scope.statusval = response.status;
 
-                    $scope.headers = response.headers();
+                $scope.statustext = response.statusText;
 
-                });
-            }
-        
+                $scope.headers = response.headers();
+
+            });
+        }
+
     })
 
     .controller("newRemindersController", function ($scope, $http) {
